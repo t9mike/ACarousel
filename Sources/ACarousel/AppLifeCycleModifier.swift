@@ -20,6 +20,9 @@
 
 import SwiftUI
 
+// Do not need timer
+
+/*
 
 #if os(macOS)
 import AppKit
@@ -61,3 +64,5 @@ extension View {
         self.modifier(AppLifeCycleModifier(action))
     }
 }
+
+ */
