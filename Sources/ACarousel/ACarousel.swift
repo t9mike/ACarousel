@@ -106,6 +106,11 @@ extension ACarousel where ID == Data.Element.ID, Data.Element : Identifiable {
         self.content = content
     }
     
+    /// On watchOS using index binding breaks animation; I don't have to have it so just provide
+    /// access to selected index
+    public var index : Int {
+        return self.viewModel.activeIndex
+    }
 }
 
 
