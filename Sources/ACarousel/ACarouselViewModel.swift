@@ -36,6 +36,15 @@ class ACarouselViewModel<Data, ID>: ObservableObject where Data : RandomAccessCo
     private let _sidesScaling: CGFloat
     private let _autoScroll: ACarouselAutoScroll
     
+    internal var itemIndex: Int {
+        var i = activeIndex - 1
+        if (i < 0)
+        {
+            i = data.count-1
+        }
+        return i
+    }
+    
     init(_ data: Data, id: KeyPath<Data.Element, ID>, index: Binding<Int>, spacing: CGFloat, headspace: CGFloat, sidesScaling: CGFloat, isWrap: Bool, autoScroll: ACarouselAutoScroll) {
         
         guard index.wrappedValue < data.count else {
