@@ -25,7 +25,7 @@ import SwiftUI
 public struct ACarousel<Data, ID, Content> : View where Data : RandomAccessCollection, ID : Hashable, Content : View {
     
     @ObservedObject
-    public var viewModel: ACarouselViewModel<Data, ID>
+    private var viewModel: ACarouselViewModel<Data, ID>
     private let content: (Data.Element) -> Content
     
     public var body: some View {

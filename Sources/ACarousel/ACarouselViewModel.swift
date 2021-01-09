@@ -22,7 +22,7 @@ import SwiftUI
 import Combine
 
 @available(iOS 13.0, OSX 10.15, *)
-public class ACarouselViewModel<Data, ID>: ObservableObject where Data : RandomAccessCollection, ID : Hashable {
+class ACarouselViewModel<Data, ID>: ObservableObject where Data : RandomAccessCollection, ID : Hashable {
     
     /// external index
     @Binding
@@ -61,7 +61,7 @@ public class ACarouselViewModel<Data, ID>: ObservableObject where Data : RandomA
     
     
     /// The index of the currently active subview.
-    @Published public var activeIndex: Int = 0 {
+    @Published var activeIndex: Int = 0 {
         willSet {
             if isWrap {
                 if newValue > _data.count || newValue == 0 {
